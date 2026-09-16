@@ -27,8 +27,43 @@ Check the following and answer each briefly:
    generated)? If something looks wrong, tell me what to re-check (JDK version, ./gradlew, etc.).
 
 Here is my Greeting.java:
-<PASTE the contents of src/main/java/edu/northeastern/sketchpad/Greeting.java>
+package edu.northeastern.setup;
+
+/**
+ * The one thing you edit this week: put your name in {@link #STUDENT_NAME} so the
+ * app greets you by name. That is the whole assignment — the point is to get the
+ * build, tests, LLM evaluation, and submission workflow working before Assignment 01.
+ *
+ * <p>This package is deliberately its own small world. It belongs to neither of the
+ * two codebases you will actually build this term, and nothing here carries forward:
+ * after this week you can forget it entirely. What carries forward is the layout it
+ * sits in, and the commands you ran against it.
+ */
+public final class Greeting {
+
+  private static final String STUDENT_NAME = "Gurpreet Kaur";
+
+  private Greeting() {
+    // utility class: no instances
+  }
+
+  /**
+   * @return a greeting naming the student, e.g. {@code "Hello, Java! — Ada Lovelace"}.
+   */
+  public static String message() {
+    return "Hello, Java! — " + STUDENT_NAME;
+  }
+}
 
 Here is the output of my commands (paste what you saw):
-<PASTE the output of: ./gradlew run   and   ./gradlew test jacocoTestReport checkstyleMain>
+PS C:\Users\gifty\OneDrive\Desktop\VS\workshop1> ./gradlew run
+> Task :run
+Hello, Java! ∩┐╜ Gurpreet Kaur
+
+BUILD SUCCESSFUL in 2s
+2 actionable tasks: 1 executed, 1 up-to-date
+PS C:\Users\gifty\OneDrive\Desktop\VS\workshop1> ./gradlew test jacocoTestReport checkstyleMain
+
+BUILD SUCCESSFUL in 1s
+5 actionable tasks: 5 up-to-date
 ```
